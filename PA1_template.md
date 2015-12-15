@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 
@@ -36,7 +41,7 @@ Here we can see an histogram that represents the frequency of total number of st
 hist(num_step_day$x, main="Frequency of steps taken per day", xlab="Steps per day", breaks=10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 
 Eventualy I have calculated the mean and the median of the total number of steps taken per day:
@@ -80,7 +85,7 @@ mean_step_interval <- aggregate(data_raw$steps, by=list(data_raw$interval), FUN=
 plot(mean_step_interval$Group.1, mean_step_interval$x, type="l", xlab="Intervals", ylab="Number of steps", main="Mean of steps during the day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 
 Eventualy I have calculated the 5-minute interval that contains the maximum number of steps (on average across all the days in the dataset):
@@ -145,7 +150,7 @@ num_step_day_mod <- aggregate(data_mod$steps, by=list(data_mod$date), sum)
 hist(num_step_day_mod$x, main="Frequency of steps taken per day (New Datasets)", xlab="Steps per day", breaks=10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
 
 
 Eventualy I have calculated the mean and the median of the total number of steps taken per day:
@@ -230,5 +235,5 @@ library(lattice)
 xyplot(steps ~ interval | day, data = mean_step_day, layout=c(1,2), ylab="Number of steps", xlab="Interval", type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-20-1.png) 
+![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png) 
 
