@@ -53,10 +53,15 @@ median_step_day <- median(num_step_day$x, na.rm =TRUE)
 
 ```
 
-The mean of steps taken per day is: `r format(mean_step_day, digits=2, nsmall=1)`
+The mean of steps taken per day is: 
+```{r} 
+format(mean_step_day, digits=2, nsmall=1)
+```
 
-The median of steps taken per day is: `r format(median_step_day, digits=2, nsmall=1)`
-
+The median of steps taken per day is: 
+```{r} 
+format(median_step_day, digits=2, nsmall=1)
+```
 
 
 
@@ -80,8 +85,10 @@ max_step_interval <- max(mean_step_interval$x, na.rm=TRUE)
 max_interval <- mean_step_interval[mean_step_interval$x == max_step_interval, 1]
 ```
 
-The 5-minute interval with the maximum number of steps in average is: `r max_interval`
-
+The 5-minute interval with the maximum number of steps in average is: 
+```{r}
+max_interval
+```
 
 
 
@@ -96,8 +103,10 @@ num_na_value <- sum(as.numeric(is.na(data_raw$steps)))
 
 ```
 
-The total number of missing values in the dataset is: `r num_na_value`
-
+The total number of missing values in the dataset is: 
+```{r}
+num_na_value
+```
 
 To filling in all the missing values I have decided to replace them with the mean for the corresponding 5-minute interval:
 ```{r}
@@ -129,10 +138,22 @@ median_step_day_mod <- median(num_step_day_mod$x)
 
 ```
 
-The mean of steps taken per day for the new datasets is: `r format(mean_step_day_mod, digits=2, nsmall=1)` (Original datasets: `r format(mean_step_day, digits=2, nsmall=1)` )
-
-The median of steps taken per day for the new datasets is: `r format(median_step_day_mod, digits=2, nsmall=1)` (Original datasets: `r format(median_step_day, digits=2, nsmall=1)` )
-
+The mean of steps taken per day for the new datasets is: 
+```{r}
+format(mean_step_day_mod, digits=2, nsmall=1)
+```
+mean from original datasets: 
+```{r}
+format(mean_step_day, digits=2, nsmall=1) 
+```
+The median of steps taken per day for the new datasets is: 
+```{r}
+format(median_step_day_mod, digits=2, nsmall=1)
+```
+Median from original datasets: 
+```{r}
+format(median_step_day, digits=2, nsmall=1)
+```
 
 The impact of imputing missing data on the estimates of the total daily number of steps is that the median becomes equal to the mean.
 
